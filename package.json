@@ -1,6 +1,6 @@
 {
   "name": "project-echo",
-  "version": "0.1.1",
+  "version": "0.1.2-beta.1",
   "description": "A cross-platform AI speaking companion with a floating teleprompter, live speech tracking and project-aware answers.",
   "license": "MIT",
   "repository": {
@@ -109,7 +109,7 @@
       }
     },
     "linux": {
-      "icon": "assets/icons/linux",
+      "icon": "assets/icons/app-icon.png",
       "category": "Utility",
       "target": [
         "AppImage",
