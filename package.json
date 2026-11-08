@@ -42,7 +42,7 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^6.2.1",
     "concurrently": "^9.1.2",
     "electron": "45.2.3",
     "electron-builder": "26.18.0",
