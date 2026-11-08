@@ -1,0 +1,929 @@
+
+/* =========================================
+   SCRIPT LIBRARY
+========================================= */
+
+.scripts-page {
+  width: 100%;
+  max-width: 1180px;
+  padding: 35px 0 50px;
+}
+
+.scripts-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.scripts-eyebrow {
+  color: #999;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.3px;
+}
+
+.scripts-page-header h1 {
+  margin: 10px 0 7px;
+  color: #242424;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -.8px;
+}
+
+.scripts-page-header p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.scripts-primary-button,
+.scripts-secondary-button {
+  min-height: 37px;
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid #292929;
+  border-radius: 9px;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 650;
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.scripts-primary-button {
+  background: #292929;
+  color: #fff;
+}
+
+.scripts-primary-button:hover:not(:disabled) {
+  background: #464646;
+}
+
+.scripts-secondary-button {
+  border-color: #e4e4e4;
+  background: #fff;
+  color: #444;
+}
+
+.scripts-secondary-button:hover {
+  background: #f7f7f7;
+}
+
+.scripts-primary-button:disabled,
+.scripts-secondary-button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   CREATE FORM
+========================================= */
+
+.scripts-create-form {
+  display: grid;
+  gap: 11px;
+
+  margin-bottom: 18px;
+  padding: 16px;
+
+  border: 1px solid #e8e8e8;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.scripts-create-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #444;
+  font-size: 11px;
+}
+
+.scripts-create-heading button {
+  width: 25px;
+  height: 25px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #999;
+}
+
+.scripts-create-heading button:hover {
+  background: #f4f4f4;
+}
+
+.scripts-create-form input {
+  width: 100%;
+  height: 38px;
+  padding: 0 11px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  outline: none;
+
+  background: #fff;
+  color: #333;
+
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.scripts-create-form input:focus {
+  border-color: #aaa;
+}
+
+.scripts-create-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* =========================================
+   SCRIPT GRID
+========================================= */
+
+.scripts-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(250px, .8fr);
+  gap: 17px;
+  align-items: start;
+}
+
+.scripts-list-panel,
+.scripts-detail-panel {
+  min-width: 0;
+
+  border: 1px solid #e8e8e8;
+  border-radius: 15px;
+  background: #fff;
+}
+
+.scripts-list-panel {
+  padding: 17px;
+}
+
+.scripts-list-heading {
+  margin-bottom: 13px;
+}
+
+.scripts-list-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scripts-list-heading strong {
+  color: #393939;
+  font-size: 11px;
+}
+
+.scripts-list-heading span {
+  min-width: 21px;
+  height: 19px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0 5px;
+
+  border-radius: 10px;
+  background: #f2f2f2;
+  color: #777;
+  font-size: 8px;
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.scripts-search {
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 10px;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 9px;
+
+  color: #999;
+}
+
+.scripts-search:focus-within {
+  border-color: #bbb;
+}
+
+.scripts-search input {
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+  color: #333;
+
+  font-family: inherit;
+  font-size: 9px;
+}
+
+.scripts-search input::placeholder {
+  color: #aaa;
+}
+
+.scripts-search button {
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #999;
+}
+
+/* =========================================
+   SCRIPT LIST
+========================================= */
+
+.scripts-list {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.scripts-list-item {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #fff;
+
+  transition:
+    background .15s ease,
+    border-color .15s ease;
+}
+
+.scripts-list-item:hover {
+  background: #fafafa;
+}
+
+.scripts-list-item.selected {
+  border-color: #e4e4e4;
+  background: #f7f7f7;
+}
+
+.scripts-item-main {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px;
+
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.scripts-item-icon {
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+  background: #f0f0f0;
+  color: #666;
+}
+
+.scripts-item-copy {
+  min-width: 0;
+  flex: 1;
+
+  display: grid;
+  gap: 5px;
+}
+
+.scripts-item-copy strong {
+  overflow: hidden;
+  color: #444;
+  font-size: 10px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scripts-item-copy span {
+  overflow: hidden;
+  color: #999;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scripts-selected-icon {
+  flex: 0 0 auto;
+  color: #37845c;
+}
+
+.scripts-item-actions {
+  display: flex;
+  gap: 1px;
+}
+
+.scripts-item-actions button {
+  width: 26px;
+  height: 26px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #999;
+
+  cursor: pointer;
+}
+
+.scripts-item-actions button:hover {
+  background: #eee;
+  color: #444;
+}
+
+.scripts-item-actions button.danger:hover {
+  background: #fff0ef;
+  color: #a9443b;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.scripts-empty-list {
+  min-height: 185px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: #aaa;
+  text-align: center;
+}
+
+.scripts-empty-list strong {
+  color: #666;
+  font-size: 10px;
+}
+
+.scripts-empty-list span {
+  color: #999;
+  font-size: 9px;
+}
+
+/* =========================================
+   SCRIPT DETAILS
+========================================= */
+
+.scripts-detail-panel {
+  min-height: 315px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 21px;
+}
+
+.scripts-detail-icon {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+  background: #f2f2f2;
+  color: #555;
+}
+
+.scripts-detail-label {
+  margin-top: 18px;
+  color: #999;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 1.1px;
+}
+
+.scripts-detail-panel h2 {
+  margin: 8px 0 0;
+  color: #333;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.scripts-detail-panel > p {
+  max-width: 100%;
+  max-height: 130px;
+  overflow: hidden;
+
+  margin: 10px 0 0;
+
+  color: #888;
+  font-size: 9px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.scripts-detail-stats {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+  margin-top: 18px;
+  padding: 13px 0;
+
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.scripts-detail-stats > div {
+  display: grid;
+  gap: 4px;
+}
+
+.scripts-detail-stats strong {
+  color: #444;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.scripts-detail-stats span {
+  color: #999;
+  font-size: 8px;
+}
+
+.scripts-detail-updated {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-top: 13px;
+
+  color: #999;
+  font-size: 8px;
+}
+
+.scripts-open-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.scripts-detail-empty {
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: #aaa;
+  text-align: center;
+}
+
+.scripts-detail-empty strong {
+  color: #666;
+  font-size: 10px;
+}
+
+.scripts-detail-empty span {
+  max-width: 200px;
+  color: #999;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   ERRORS
+========================================= */
+
+.scripts-error {
+  margin-bottom: 14px;
+  padding: 9px 11px;
+
+  border: 1px solid #efd6d3;
+  border-radius: 8px;
+
+  background: #fff8f7;
+  color: #a34036;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   SCRIPT EDITOR COMPONENT
+========================================= */
+
+.script-editor-component {
+  width: 100%;
+  min-width: 0;
+  min-height: 340px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  margin-top: 23px;
+}
+
+/* =========================================
+   EDITOR FRAME
+========================================= */
+
+.echo-script-editor-frame {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 340px;
+  flex: 1;
+
+  display: block;
+
+  overflow: hidden;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 15px;
+
+  background: #fafafa;
+
+  transition:
+    border-color .15s ease,
+    background .15s ease;
+}
+
+.echo-script-editor-frame:focus-within {
+  border-color: #bdbdbd;
+  background: #fff;
+}
+
+/* =========================================
+   ACTUAL EDITABLE TEXT SURFACE
+========================================= */
+
+/*
+  This is a real contentEditable element.
+
+  It renders both ordinary text and highlighted phrases
+  directly. There is no invisible textarea underneath it.
+*/
+
+.echo-script-rich-editor {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+
+  display: block;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 19px;
+
+  border: 0;
+  border-radius: inherit;
+
+  outline: none;
+
+  background: transparent;
+  color: #333;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  text-align: left;
+  cursor: text;
+
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 transparent;
+
+  -webkit-user-select: text;
+  user-select: text;
+
+  -webkit-app-region: no-drag;
+}
+
+.echo-script-rich-editor:empty::before {
+  content: attr(data-placeholder);
+
+  display: block;
+
+  color: #aaa;
+  pointer-events: none;
+}
+
+.echo-script-rich-editor:focus {
+  outline: none;
+}
+
+.echo-script-rich-editor::selection,
+.echo-script-rich-editor *::selection {
+  background: rgba(72, 132, 215, .25);
+  color: #222;
+}
+
+.echo-script-rich-editor::-webkit-scrollbar {
+  width: 6px;
+}
+
+.echo-script-rich-editor::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #c9c9c9;
+}
+
+.echo-script-rich-editor::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================================
+   HIGHLIGHT COLOURS
+========================================= */
+
+.echo-script-rich-editor .script-highlight-yellow {
+  background: #FFF0A8;
+  border-radius: 3px;
+  box-shadow: inset 0 -2px #EBCB64;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.echo-script-rich-editor .script-highlight-green {
+  background: #D9F0DF;
+  border-radius: 3px;
+  box-shadow: inset 0 -2px #85C49B;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.echo-script-rich-editor .script-highlight-blue {
+  background: #DCEBFF;
+  border-radius: 3px;
+  box-shadow: inset 0 -2px #8CB5E8;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.echo-script-rich-editor .script-highlight-pink {
+  background: #F9DDE9;
+  border-radius: 3px;
+  box-shadow: inset 0 -2px #E5A2BF;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* =========================================
+   HIGHLIGHT TOOLBAR
+========================================= */
+
+.script-highlight-toolbar {
+  min-height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  padding: 5px 8px;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 9px;
+
+  background: #fff;
+}
+
+.script-highlight-toolbar-label {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #888;
+  font-size: 8px;
+}
+
+.script-highlight-toolbar-label svg {
+  flex: 0 0 auto;
+}
+
+.script-highlight-colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.script-highlight-color {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+
+  border: 1px solid rgba(0, 0, 0, .09);
+  border-radius: 6px;
+
+  background: var(--highlight-color);
+  cursor: pointer;
+}
+
+.script-highlight-color:hover:not(:disabled) {
+  transform: scale(1.12);
+  border-color: #888;
+}
+
+.script-highlight-color:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.script-highlight-remove {
+  width: 24px;
+  height: 23px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: transparent;
+  color: #888;
+
+  cursor: pointer;
+}
+
+.script-highlight-remove:hover:not(:disabled) {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.script-highlight-remove:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   EDITOR ACTIONS
+========================================= */
+
+.script-editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.script-editor-actions button {
+  border: 0;
+  padding: 5px 0;
+
+  background: transparent;
+  color: #555;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.script-editor-actions button:hover {
+  color: #111;
+}
+
+/* =========================================
+   FLOATING TELEPROMPTER HIGHLIGHTS
+========================================= */
+
+.compact-script .script-highlight-yellow {
+  background: #FFF0A8;
+  box-shadow: inset 0 -2px #EBCB64;
+  border-radius: 3px;
+}
+
+.compact-script .script-highlight-green {
+  background: #D9F0DF;
+  box-shadow: inset 0 -2px #85C49B;
+  border-radius: 3px;
+}
+
+.compact-script .script-highlight-blue {
+  background: #DCEBFF;
+  box-shadow: inset 0 -2px #8CB5E8;
+  border-radius: 3px;
+}
+
+.compact-script .script-highlight-pink {
+  background: #F9DDE9;
+  box-shadow: inset 0 -2px #E5A2BF;
+  border-radius: 3px;
+}
+
+/*
+  Reading cursor takes priority visually over saved
+  highlights, while the saved highlight remains stored.
+*/
+
+.compact-script .current-word,
+.compact-script .interim-word {
+  border-radius: 4px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .scripts-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scripts-detail-panel {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 560px) {
+  .scripts-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .scripts-item-actions {
+    gap: 0;
+  }
+
+  .scripts-item-actions button {
+    width: 23px;
+  }
+
+  .script-highlight-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .echo-script-rich-editor {
+    padding: 13px;
+    font-size: 13px;
+  }
+}

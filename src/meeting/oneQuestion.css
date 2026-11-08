@@ -1,0 +1,388 @@
+
+/* =========================================
+   ASK BUTTON
+========================================= */
+
+.ask-button {
+  height: 27px;
+  min-height: 27px;
+  padding: 0 10px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex: 0 0 auto;
+
+  border: 1px solid #e1e1e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #444;
+
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    color .15s ease;
+}
+
+.ask-button:hover:not(:disabled) {
+  background: #f3f3f3;
+}
+
+.ask-button.is-active {
+  border-color: #d8e9df;
+  background: #eef7f1;
+  color: #286448;
+}
+
+.ask-button:disabled {
+  cursor: not-allowed;
+  opacity: .48;
+}
+
+/* =========================================
+   BACK TO SCRIPT
+========================================= */
+
+.compact-back-button {
+  height: 25px;
+  padding: 0 9px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+.compact-back-button:hover {
+  background: #f3f3f3;
+  color: #222;
+}
+
+/* =========================================
+   ANSWER MODE
+========================================= */
+
+.compact-content.answer-mode {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/*
+  Question row and answer share ONE scroll container.
+  The question can scroll completely out of view.
+*/
+
+.compact-content.answer-mode > .compact-answer-view {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  flex: 1 1 0;
+
+  display: block;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+
+  overscroll-behavior: contain;
+
+  padding: 2px 5px 8px 0;
+
+  color: #292929;
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+  scrollbar-width: thin;
+  scrollbar-color: #c9c9c9 transparent;
+
+  -webkit-app-region: no-drag;
+}
+
+.compact-answer-view::-webkit-scrollbar {
+  width: 5px;
+}
+
+.compact-answer-view::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #c9c9c9;
+}
+
+.compact-answer-view::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================================
+   EDITABLE QUESTION ROW
+========================================= */
+
+.answer-question-row {
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+
+  margin: 0 0 8px;
+  overflow: hidden;
+}
+
+.answer-question-input {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  min-height: 34px;
+
+  flex: 1 1 auto;
+
+  margin: 0;
+  padding: 0 10px;
+
+  border: 1px solid #e5e5e5;
+  border-radius: 9px;
+  outline: none;
+
+  background: #fff;
+  color: #333;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+
+  -webkit-app-region: no-drag;
+}
+
+.answer-question-input::placeholder {
+  color: #aaa;
+  font-weight: 400;
+}
+
+.answer-question-input:focus {
+  border-color: #b8b8b8;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, .035);
+}
+
+.answer-update-button {
+  display: inline-flex;
+
+  width: 66px;
+  min-width: 66px;
+  max-width: 66px;
+
+  height: 34px;
+  min-height: 34px;
+
+  flex: 0 0 66px;
+
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin: 0;
+  padding: 0 8px;
+
+  border: 1px solid #292929;
+  border-radius: 9px;
+
+  background: #292929;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1;
+
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+}
+
+.answer-update-button:hover:not(:disabled) {
+  background: #444;
+  border-color: #444;
+}
+
+.answer-update-button:disabled {
+  cursor: wait;
+  opacity: .48;
+}
+
+/* =========================================
+   ANSWER TEXT
+========================================= */
+
+/*
+  The answer itself does not scroll separately.
+  The parent scrolls question + answer together.
+
+  Extra minimum height allows the question row to
+  move completely above the visible area, even
+  when the answer is relatively short.
+*/
+
+.answer-text {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100% + 42px);
+
+  margin: 0;
+  padding: 2px 5px 8px 0;
+
+  overflow: visible;
+
+  color: #292929;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+
+  -webkit-app-region: no-drag;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.answer-loading {
+  width: 100%;
+  min-height: 55px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  padding: 5px 2px;
+
+  color: #777;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.answer-spinner {
+  flex: 0 0 auto;
+  animation: echo-answer-spin .9s linear infinite;
+}
+
+@keyframes echo-answer-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   ERROR / RETRY
+========================================= */
+
+.answer-error {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  padding: 8px;
+
+  border: 1px solid #f0d2cf;
+  border-radius: 8px;
+
+  background: #fff8f7;
+  color: #a02d24;
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.answer-retry-button {
+  min-height: 25px;
+  padding: 0 9px;
+
+  border: 1px solid #e5d2d0;
+  border-radius: 7px;
+
+  background: #fff;
+  color: #8e332c;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.answer-retry-button:hover {
+  background: #fff0ed;
+}
+
+/* =========================================
+   FOOTER STATUS
+========================================= */
+
+.ask-state-listening {
+  color: #28734b !important;
+}
+
+.ask-state-generating {
+  color: #6c659a !important;
+}
+
+/* =========================================
+   SMALL WINDOWS
+========================================= */
+
+@media (max-width: 500px) {
+  .ask-button {
+    padding: 0 7px;
+  }
+
+  .compact-back-button {
+    padding: 0 6px;
+    font-size: 8px;
+  }
+
+  .answer-question-input {
+    padding: 0 7px;
+    font-size: 11px;
+  }
+
+  .answer-update-button {
+    width: 59px;
+    min-width: 59px;
+    max-width: 59px;
+    flex-basis: 59px;
+  }
+
+  .answer-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}

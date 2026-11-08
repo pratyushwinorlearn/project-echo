@@ -1,0 +1,688 @@
+
+/* =========================================
+   AI ASSISTANT PAGE
+========================================= */
+
+.assistant-page {
+  width: 100%;
+  max-width: 1120px;
+  min-height: 650px;
+  padding: 35px 0 45px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.assistant-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-bottom: 23px;
+}
+
+.assistant-eyebrow {
+  color: #999;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.4px;
+}
+
+.assistant-page-header h1 {
+  margin: 9px 0 7px;
+  color: #252525;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 650;
+  letter-spacing: -.8px;
+}
+
+.assistant-page-header p {
+  max-width: 560px;
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   NEW CONVERSATION BUTTON
+========================================= */
+
+.assistant-new-chat-button {
+  min-height: 35px;
+  padding: 0 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  border: 1px solid #e3e3e3;
+  border-radius: 9px;
+
+  background: #fff;
+  color: #444;
+
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: 650;
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.assistant-new-chat-button:hover {
+  background: #f6f6f6;
+}
+
+/* =========================================
+   ASSISTANT TOOLBAR
+========================================= */
+
+.assistant-toolbar {
+  min-height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 13px;
+  padding: 9px 13px;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.assistant-scope-control,
+.assistant-style-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #777;
+  font-size: 9px;
+}
+
+.assistant-scope-control > svg {
+  flex: 0 0 auto;
+}
+
+.assistant-scope-control > span,
+.assistant-style-control > span {
+  color: #888;
+  font-size: 8px;
+  white-space: nowrap;
+}
+
+.assistant-select-wrap {
+  position: relative;
+}
+
+.assistant-select-wrap select,
+.assistant-style-control select {
+  min-width: 125px;
+  height: 30px;
+  padding: 0 27px 0 9px;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 7px;
+  outline: none;
+
+  appearance: none;
+  background: #fff;
+  color: #444;
+
+  font-family: inherit;
+  font-size: 9px;
+}
+
+.assistant-select-wrap > svg {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #999;
+  pointer-events: none;
+}
+
+/* =========================================
+   CHAT PANEL
+========================================= */
+
+.assistant-chat-panel {
+  min-height: 430px;
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  background: #fff;
+
+  overflow: hidden;
+}
+
+.assistant-chat-scroll {
+  min-height: 300px;
+  flex: 1 1 auto;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.assistant-chat-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.assistant-chat-scroll::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #ccc;
+}
+
+/* =========================================
+   WELCOME / EMPTY STATE
+========================================= */
+
+.assistant-welcome {
+  min-height: 400px;
+  padding: 48px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.assistant-welcome-icon {
+  width: 51px;
+  height: 51px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+  background: #f2f2f2;
+  color: #555;
+}
+
+.assistant-welcome h2 {
+  margin: 18px 0 8px;
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.assistant-welcome > p {
+  max-width: 470px;
+  margin: 0;
+
+  color: #929292;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.assistant-suggestions {
+  width: min(520px, 100%);
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+
+  margin-top: 22px;
+}
+
+.assistant-suggestions button {
+  min-width: 0;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 11px;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 9px;
+
+  background: #fff;
+  color: #666;
+
+  text-align: left;
+  font-family: inherit;
+  font-size: 9px;
+  line-height: 1.45;
+
+  cursor: pointer;
+  transition:
+    background .15s ease,
+    border-color .15s ease;
+}
+
+.assistant-suggestions button:hover {
+  border-color: #d8d8d8;
+  background: #f8f8f8;
+}
+
+.assistant-suggestions button svg {
+  flex: 0 0 auto;
+  color: #888;
+}
+
+.assistant-retrieval-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 22px;
+  color: #999;
+  font-size: 8px;
+}
+
+.assistant-empty-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #888;
+  font-size: 9px;
+}
+
+/* =========================================
+   MESSAGES
+========================================= */
+
+.assistant-messages {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 25px 23px;
+
+  display: grid;
+  gap: 27px;
+}
+
+.assistant-message {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.assistant-message-avatar {
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+  background: #f1f1f1;
+  color: #555;
+}
+
+.assistant-message.user .assistant-message-avatar {
+  background: #333;
+  color: #fff;
+}
+
+.assistant-message-body {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.assistant-message-heading {
+  min-height: 19px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 7px;
+}
+
+.assistant-message-heading strong {
+  color: #444;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.assistant-message-heading span {
+  overflow: hidden;
+  color: #aaa;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assistant-message-content {
+  color: #424242;
+  font-size: 11px;
+  line-height: 1.8;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.assistant-message.user .assistant-message-content {
+  color: #333;
+  font-weight: 550;
+}
+
+/* =========================================
+   SOURCE REFERENCES
+========================================= */
+
+.assistant-message-sources {
+  margin-top: 15px;
+  padding-top: 11px;
+
+  border-top: 1px solid #eee;
+}
+
+.assistant-sources-heading {
+  margin-bottom: 8px;
+  color: #999;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.assistant-source-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.assistant-source-reference {
+  max-width: 100%;
+
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 9px;
+
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  background: #fafafa;
+
+  color: #777;
+}
+
+.assistant-source-number {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 5px;
+  background: #eee;
+  color: #666;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.assistant-source-reference > svg {
+  flex: 0 0 auto;
+  color: #888;
+}
+
+.assistant-source-info {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.assistant-source-info strong {
+  overflow: hidden;
+  color: #555;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assistant-source-info small {
+  overflow: hidden;
+  color: #999;
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================
+   MESSAGE ACTIONS
+========================================= */
+
+.assistant-message-actions {
+  min-height: 26px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 9px;
+}
+
+.assistant-message-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px 0;
+
+  border: 0;
+  background: transparent;
+  color: #888;
+
+  font-family: inherit;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+.assistant-message-actions button:hover {
+  color: #333;
+}
+
+.assistant-message-actions > span {
+  color: #aaa;
+  font-size: 8px;
+}
+
+/* =========================================
+   THINKING STATE
+========================================= */
+
+.assistant-thinking {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding-left: 40px;
+
+  color: #888;
+  font-size: 9px;
+}
+
+.assistant-spin {
+  flex: 0 0 auto;
+  animation: assistant-spin .9s linear infinite;
+}
+
+@keyframes assistant-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   COMPOSER
+========================================= */
+
+.assistant-composer {
+  flex: 0 0 auto;
+
+  margin: 0 17px 16px;
+  padding: 10px 11px 8px;
+
+  border: 1px solid #e3e3e3;
+  border-radius: 13px;
+
+  background: #fff;
+
+  transition: border-color .15s ease;
+}
+
+.assistant-composer:focus-within {
+  border-color: #bdbdbd;
+}
+
+.assistant-composer textarea {
+  display: block;
+
+  width: 100%;
+  min-height: 50px;
+  max-height: 130px;
+
+  padding: 4px 2px;
+
+  resize: vertical;
+  outline: none;
+  border: 0;
+
+  background: transparent;
+  color: #333;
+
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.assistant-composer textarea::placeholder {
+  color: #aaa;
+}
+
+.assistant-composer-footer {
+  min-height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.assistant-composer-footer > span {
+  overflow: hidden;
+  color: #999;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.assistant-send-button {
+  min-width: 78px;
+  height: 29px;
+  padding: 0 9px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #292929;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.assistant-send-button:hover:not(:disabled) {
+  background: #474747;
+}
+
+.assistant-send-button:disabled {
+  cursor: not-allowed;
+  opacity: .4;
+}
+
+/* =========================================
+   ERRORS AND DISCLAIMERS
+========================================= */
+
+.assistant-error {
+  margin-bottom: 8px;
+  color: #a34036;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.assistant-disclaimer {
+  margin: 10px 0 0;
+  color: #999;
+  font-size: 8px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 760px) {
+  .assistant-page {
+    padding-top: 25px;
+  }
+
+  .assistant-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .assistant-scope-control,
+  .assistant-style-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .assistant-select-wrap select,
+  .assistant-style-control select {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 500px) {
+  .assistant-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .assistant-suggestions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .assistant-messages {
+    padding: 18px 12px;
+  }
+
+  .assistant-composer {
+    margin: 0 10px 10px;
+  }
+}

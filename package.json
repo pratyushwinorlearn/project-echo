@@ -1,0 +1,123 @@
+{
+  "name": "project-echo",
+  "version": "0.1.1",
+  "description": "A cross-platform AI speaking companion with a floating teleprompter, live speech tracking and project-aware answers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pratyushwinorlearn/project-echo.git"
+  },
+  "homepage": "https://github.com/pratyushwinorlearn/project-echo#readme",
+  "bugs": {
+    "url": "https://github.com/pratyushwinorlearn/project-echo/issues"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "teleprompter",
+    "ai-assistant",
+    "speech-tracking",
+    "desktop-app"
+  ],
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on tcp:5173 && electron .\"",
+    "build": "vite build",
+    "start": "electron .",
+    "check:electron": "node --check electron/main.cjs && node --check electron/preload.cjs && node --check electron/ai/secureCredentialStore.cjs && node --check electron/ai/aiManager.cjs && node --check electron/ai/providerRegistry.cjs && node --check electron/ai/providers/anthropic.cjs && node --check electron/ai/providers/openaiCompatible.cjs && node --check electron/knowledge/bm25Engine.cjs && node --check electron/knowledge/documentChunker.cjs && node --check electron/knowledge/documentExtractor.cjs && node --check electron/knowledge/documentManager.cjs && node --check electron/knowledge/knowledgeController.cjs && node --check electron/meeting/systemAudioController.cjs && node --check electron/scripts/scriptController.cjs && node --check electron/scripts/scriptManager.cjs && node --check electron/speech/deepgramProvider.cjs",
+    "test:deepgram": "node scripts/test-deepgram.cjs",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win nsis --x64",
+    "dist:mac": "npm run build && electron-builder --mac dmg zip",
+    "dist:linux": "npm run build && electron-builder --linux AppImage deb --x64",
+    "pack": "npm run build && electron-builder --dir"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "lucide-react": "^0.468.0",
+    "mammoth": "^1.13.0",
+    "pdf-parse": "^2.4.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "45.2.3",
+    "electron-builder": "26.18.0",
+    "vite": "^6.0.5",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.projectecho.desktop",
+    "productName": "Project Echo",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "artifactName": "Project-Echo-${version}-${os}-${arch}.${ext}",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "!**/.env",
+      "!**/.env.*",
+      "!**/knowledge-library/**",
+      "!**/userData/**",
+      "!**/*credentials*.enc",
+      "!**/*credential-store*",
+      "!**/*.sqlite",
+      "!**/*.db",
+      "!**/*.log",
+      "!**/project-tree.txt",
+      "!**/*.map"
+    ],
+    "win": {
+      "icon": "assets/icons/app-icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Project Echo",
+      "installerIcon": "assets/icons/app-icon.ico",
+      "uninstallerIcon": "assets/icons/app-icon.ico",
+      "installerHeaderIcon": "assets/icons/app-icon.ico"
+    },
+    "mac": {
+      "icon": "assets/icons/app-icon.icns",
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "identity": null,
+      "extendInfo": {
+        "NSAudioCaptureUsageDescription": "Project Echo can capture system audio only when you explicitly start meeting-audio capture."
+      }
+    },
+    "linux": {
+      "icon": "assets/icons/linux",
+      "category": "Utility",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "synopsis": "AI speaking companion with a floating teleprompter",
+      "description": "Project Echo is an AI speaking companion with live speech tracking, a floating teleprompter and project-aware answers."
+    }
+  },
+  "author": "Pratyush"
+}
