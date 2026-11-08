@@ -33,7 +33,7 @@
     "pack": "npm run build && electron-builder --dir"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
+    "dotenv": "^18.0.9",
     "lucide-react": "^0.468.0",
     "mammoth": "^1.13.0",
     "pdf-parse": "^2.4.5",
