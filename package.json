@@ -110,6 +110,7 @@
     },
     "linux": {
       "icon": "assets/icons/app-icon.png",
+      "maintainer": "Pratyush pratyushqgis22@gmail.com",
       "category": "Utility",
       "target": [
         "AppImage",

@@ -71,15 +71,15 @@ jobs:
 
       - name: Package Windows installer
         if: matrix.platform == 'windows'
-        run: npx electron-builder --win nsis --x64
+        run: npx electron-builder --win nsis --x64 --publish never
 
       - name: Package Linux installers
         if: matrix.platform == 'linux'
-        run: npx electron-builder --linux AppImage deb --x64
+        run: npx electron-builder --linux AppImage deb --x64 --publish never
 
       - name: Package macOS installers
         if: matrix.platform == 'macos'
-        run: npx electron-builder --mac dmg zip --${{ matrix.arch }}
+        run: npx electron-builder --mac dmg zip --${{ matrix.arch }} --publish never
 
       - name: Upload installer artifacts
         uses: actions/upload-artifact@v4
